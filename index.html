@@ -45,10 +45,11 @@
             })
             .then(() =>{
                 if(liff.isLoggedIn ()){
+                    console.log(profile);
                     liff.getProfile().then(profile => {
                         document.getElementById("name").innerHTML = profile.displayName;
                         document.getElementById("picture").setAttribute('src',profile.pictureUrl);
-                        document.getElementById("statusMessage").innerHTML = profile;
+                        document.getElementById("statusMessage").innerHTML = profile.statusMessage;
                         document.getElementById("id").innerHTML = profile.userId;
                         document.getElementById("AccessToken").innerHTML = liff.getAccessToken();
                         document.getElementById("IDToken").innerHTML = liff.getIDToken();
